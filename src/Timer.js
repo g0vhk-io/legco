@@ -4,8 +4,7 @@ import { withStyles } from 'material-ui/styles';
 const styles = () => ({
   container: {
     fontSize:'15pt',
-    width: '50sw',
-    float: 'right',
+    width: '100%',
     textAlign: 'right',
   },
   right: {
