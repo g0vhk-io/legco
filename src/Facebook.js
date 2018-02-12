@@ -6,7 +6,8 @@ import { withStyles } from 'material-ui/styles';
 const styles = () => ({
   container: {
     overflow: 'hidden',
-    float: 'right',
+    minHeight: '100px',
+    float: 'left'
   }
 });
 
