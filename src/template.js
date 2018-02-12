@@ -23,6 +23,8 @@ export default ({ title, app }) => {
     <!DOCTYPE html>
     <html>
       <head>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">       
         <title>${title}</title>
         <link rel="stylesheet" href="/assets/index.css" />
       </head>
