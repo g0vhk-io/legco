@@ -9,14 +9,17 @@
     "react-icons": "^2.2.7"
   },
   "scripts": {
-    "start": "babel-watch src/app.js",
-    "build": "babel src -d dist",
+    "start": "babel-watch server/app.js",
+    "browserify": "browserify src/**.js -o assets/bundle.js -t babelify --presets env --presets react",
+    "build": "npm run browserify && babel server -d dist",
     "serve": "node dist/app.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-watch": "^2.0.7"
+    "babel-watch": "^2.0.7",
+    "babelify": "^8.0.0",
+    "browserify": "^16.0.0"
   }
 }

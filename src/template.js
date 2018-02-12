@@ -1,24 +1,4 @@
-import { SheetsRegistry } from 'react-jss/lib/jss';
-import JssProvider from 'react-jss/lib/JssProvider';
-import { MuiThemeProvider, createMuiTheme, createGenerateClassName } from 'material-ui/styles';
-import { renderToString } from 'react-dom/server';
-import React from 'react';
-import Home from './Home';
-
-
-export default ({ title, app }) => {
-  const sheetsRegistry = new SheetsRegistry();
-  const generateClassName = createGenerateClassName();
-  const theme = createMuiTheme({});
-  const wrappedApp = (
-    <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
-      <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
-        {app}
-      </MuiThemeProvider>
-    </JssProvider>
-  );
-  const body = renderToString(wrappedApp);
-  const css = sheetsRegistry.toString();
+exports.template = function({ title, app }) {
   return `
     <!DOCTYPE html>
     <html>
@@ -38,8 +18,7 @@ export default ({ title, app }) => {
       </head>
       
       <body>
-        <div id="root">${body}</div>
-        <style id="jss-server-side">${css}</style>
+        <div id="root"></div>
       </body>
       
       <script src="/assets/bundle.js"></script>

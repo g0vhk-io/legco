@@ -1,13 +1,12 @@
 import express from 'express';
 import React from 'react';
-import Home from './Home';
-import template from './template';
+import { template } from '../src/template';
 
 const server = express();
 
 server.get('/', (req, res) => {
   res.send(template({
-    app: (<Home />),
+    app: null,
     title: 'g0vhk'
   }));
 });
