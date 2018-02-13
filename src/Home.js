@@ -15,7 +15,7 @@ import TopBar from './Topbar';
 const styles = () => ({
   jumbotron: {
     padding: '0.5em',
-    backgroundColor: '#d6d810',
+    backgroundColor: '#AAA',
     backgroundImage: 'url(/assets/gov_bg.png)',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -71,9 +71,6 @@ class Home extends Component {
            <div className={classes.jumbotron}>
              <h1><div>g0vhk.io</div></h1>
              <h1>{socialButtons} <Facebook /></h1>
-             <br/>
-             <br/>
-             <br/>
              <Timer />
            </div>
         </AppBar>

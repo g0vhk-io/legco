@@ -121,7 +121,8 @@ class Panels extends Component {
           <Tabs value={ state.value} onChange={this.handleChange.bind(this)}>
             <Tab label="最新消息"/>
             <Tab label="聊天室"/>
-            <Tab label="現正刊登的諮詢文件"/>
+            <Tab label="諮詢文件"/>
+            <Tab label="其他項目"/>
           </Tabs>
         </AppBar>
         { state.value == 1  && this.renderNews()}
