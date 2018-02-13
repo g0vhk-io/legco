@@ -9,6 +9,7 @@ import TiSocialGithub from 'react-icons/lib/ti/social-github';
 import TiSocialTwitter from 'react-icons/lib/ti/social-twitter';
 import Toolbar from 'material-ui/Toolbar';
 import Panels from './Panels';
+import TopBar from './Topbar';
 
 
 const styles = () => ({
@@ -65,6 +66,7 @@ class Home extends Component {
     );
     return (
       <div className={classes.container}>
+         <TopBar/>
          <AppBar position="static" className={classes.appBar}>
            <div className={classes.jumbotron}>
              <h1><div>g0vhk.io</div></h1>
