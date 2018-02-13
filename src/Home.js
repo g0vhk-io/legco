@@ -74,8 +74,8 @@ class Home extends Component {
              <br/>
              <Timer />
            </div>
-           <Panels/>
         </AppBar>
+        <Panels/>
       </div>
     );
   }

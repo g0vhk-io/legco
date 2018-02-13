@@ -17,11 +17,7 @@ class Timer extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.container}>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.css"></link>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.js"></script>
-        <script type="text/javascript" src="/assets/clock.js"/>
+       <script type="text/javascript" src="/assets/clock.js"/>
         五十年不變倒數器<br/>
         &nbsp;
         <div id="count_down_second" className={classes.right}></div>
