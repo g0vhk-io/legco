@@ -1,17 +1,17 @@
-import Home from './Home';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import grey from 'material-ui/colors/grey';
-var root = document.getElementById('root');
-const theme = createMuiTheme({ palette: {primary: grey}});
+import Home from './Legco/Home';
 
-import Legco from './Legco';
-
-if (root) {
+var legcoRoot = document.getElementById('legco-root');
+if (legcoRoot) {
+  const theme = createMuiTheme({ palette: {primary: grey}});
   ReactDOM.render(
    <MuiThemeProvider theme={theme}>
-     <Home/>
+     <Home />
    </MuiThemeProvider>
-  , root);
+  , legcoRoot);
+} else {
+  console.log('legco not found');
 }

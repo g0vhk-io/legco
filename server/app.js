@@ -11,10 +11,7 @@ server.get('/', (req, res) => {
 });
 
 server.get('/legco', (req, res) => {
-  res.send(template({
-    app: null,
-    title: 'g0vhk'
-  }));
+  res.render('pages/legco')
 });
 
 
