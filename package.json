@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "babel": "^6.23.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "material-ui": "^1.0.0-beta.33",
     "material-ui-icons": "^1.0.0-beta.17",

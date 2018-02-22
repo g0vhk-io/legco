@@ -3,6 +3,9 @@ import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
 import 'whatwg-fetch'; 
 
 const styles = () => ({
@@ -19,6 +22,14 @@ const styles = () => ({
     width: '80%',
     height: '50vh',
     border: '0'
+  },
+  card: {
+    maxWidth: '50em',
+    float: 'left',
+    marginLeft: '0.5em',
+  },
+  media: {
+    height: '20vh'
   }
 });
 
@@ -90,6 +101,50 @@ class Panels extends Component {
     ); 
   }
 
+  renderProjects() {
+    const { classes } = this.props;
+    return (
+      <div>
+        <br/>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.media}
+            image="/assets/data.png"
+            title="民間開放數據庫"
+          />
+          <CardContent>
+            <Typography variant="headline" component="h2">
+              民間開放數據庫
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary">
+              前往             
+            </Button>
+          </CardActions>
+        </Card>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.media}
+            image="/assets/budgetq.png"
+            title="開支預算問題書面答覆搜尋器"
+          />
+          <CardContent>
+            <Typography variant="headline" component="h2">
+              開支預算問題書面答覆搜尋器  
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary">
+              前往             
+            </Button>
+          </CardActions>
+        </Card>
+
+      </div>
+    );
+  }
+
   renderMain() {
     const { classes } = this.props;
     const { news } = this.state;
@@ -128,6 +183,7 @@ class Panels extends Component {
         { state.value == 1  && this.renderNews()}
         { state.value == 0  && this.renderMain()}
         { state.value == 2  && this.renderConsultation()}
+        { state.value == 3  && this.renderProjects()}
       </div> 
 
     );

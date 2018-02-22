@@ -4,12 +4,19 @@ import { template } from '../src/template';
 
 const server = express();
 
+server.set('view engine', 'ejs')
+
 server.get('/', (req, res) => {
+  res.render('pages/index')
+});
+
+server.get('/legco', (req, res) => {
   res.send(template({
     app: null,
     title: 'g0vhk'
   }));
 });
+
 
 server.use('/assets', express.static('assets'));
 
