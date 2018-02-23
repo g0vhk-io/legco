@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
 import { withStyles } from 'material-ui/styles';
 import Menu from './Menu';
+import AbsentRank from './AbsentRank';
 
 const styles = () => ({
   jumbotron: {
@@ -30,6 +31,9 @@ class Home extends Component {
            </div>
         </AppBar>
         <Menu />
+        <div>
+          <AbsentRank />
+        </div>
       </div>
     );
   }
