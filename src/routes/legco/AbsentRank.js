@@ -98,11 +98,11 @@ class AbsentRank extends Component {
       <div>
         <div className={classes.root}>
           <h2>最常缺席議員</h2>
-          {data.map(r => this.renderRow(r, this.absentColorFunc))}
+          {data.map(r => this.renderRow(r, AbsentRank.absentColorFunc))}
         </div>
         <div className={classes.root}>
           <h2>最常發言議員</h2>
-          {speak.map(r => this.renderRow(r, this.speakColorFunc))}
+          {speak.map(r => this.renderRow(r, AbsentRank.speakColorFunc))}
         </div>
       </div>
     );

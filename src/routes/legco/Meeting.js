@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import { withStyles } from 'material-ui/styles';
 import 'isomorphic-fetch';
 import Button from 'material-ui/Button';
-import Card, { CardActions, CardContent } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Menu from './Menu';
 import Layout from '../../components/Layout';
@@ -18,22 +18,29 @@ const styles = theme => ({
     backgroundPosition: 'center',
     color: '#FFF',
   },
+  header: {},
   title: {
     color: theme.palette.text.primary,
   },
-  container: {},
+  container: {
+    margin: '0.5rem',
+    textAlign: 'center',
+  },
   appBar: {},
   button: {
     marginRight: '1rem',
   },
   card: {
-    minWidth: '10rem',
+    minWidth: '8rem',
     float: 'left',
-    margin: '1rem',
+    margin: '0.5rem',
+    textAlign: 'center',
   },
   meetings: {
+    textAlign: 'center',
     marginTop: '3rem',
   },
+  years: {},
 });
 
 class App extends Component {
@@ -75,7 +82,7 @@ class App extends Component {
       list.push(i);
     }
     return (
-      <div>
+      <div className={classes.years}>
         {list.map(year => (
           <Button
             onClick={() => this.handleChangeYear(year)}
@@ -97,10 +104,11 @@ class App extends Component {
         <Card className={classes.card}>
           <CardContent>
             <Typography className={classes.title}>
-              <h3>立法會會議 - {meeting.date}</h3>
+              <h3>
+                立法會會議 <br /> {meeting.date}
+              </h3>
             </Typography>
             <Typography component="p">
-              <br />
               出席人數: {meeting.present_count}
               <br />
               缺席人數: {meeting.absent_count}
@@ -109,11 +117,12 @@ class App extends Component {
               <br />
             </Typography>
           </CardContent>
-          <CardActions>
+          <div>
             <Button raised color="primary">
               開啟
             </Button>
-          </CardActions>
+          </div>
+          <br />
         </Card>
       </div>
     );
@@ -133,7 +142,7 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.container}>
+      <div>
         <AppBar position="static" className={classes.appBar}>
           <div className={classes.jumbotron}>
             <h1>
@@ -142,9 +151,8 @@ class App extends Component {
           </div>
         </AppBar>
         <Menu />
-        <div>
-          <h1>會議</h1>
-          <h3>年份</h3>
+        <div className={classes.container}>
+          <h1 className={classes.header}>會議</h1>
           {this.renderYears()}
           {this.renderMeetings()}
         </div>
