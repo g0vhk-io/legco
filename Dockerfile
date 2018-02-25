@@ -1,6 +1,7 @@
-FROM mhart/alpine-node:9.5
+FROM node:8.9.4-slim
 WORKDIR /usr/src/app
 COPY package.json ./
+RUN npm -v
 RUN npm install
 COPY . .
 RUN npm run build
