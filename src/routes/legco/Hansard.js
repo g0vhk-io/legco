@@ -148,9 +148,12 @@ class App extends Component {
           <h1>出席議員</h1>
           {data.members_present.map(m => (
             <span>
-              <a href={`/legco/member/${m.individual.id}`}>
-                {m.individual.name_ch}
-              </a>&nbsp;
+              {m.individual && (
+                <a href={`/legco/member/${m.individual.id}`}>
+                  {m.individual.name_ch}
+                </a>
+              )}&nbsp;
+              {!m.individual && m.title_ch}
             </span>
           ))}
           <h1>缺席議員</h1>

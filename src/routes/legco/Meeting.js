@@ -41,6 +41,9 @@ const styles = theme => ({
     marginTop: '3rem',
   },
   years: {},
+  link: {
+    color: '#fff',
+  },
 });
 
 class App extends Component {
@@ -118,9 +121,15 @@ class App extends Component {
             </Typography>
           </CardContent>
           <div>
-            <Button raised color="primary">
-              開啟
-            </Button>
+            <a
+              href={`/legco/meeting/${meeting.id}`}
+              target="_blank"
+              className={classes.link}
+            >
+              <Button raised color="primary">
+                開啟
+              </Button>
+            </a>
           </div>
           <br />
         </Card>
