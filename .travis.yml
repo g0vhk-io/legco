@@ -1,21 +1,16 @@
-sudo: required
+language: node_js
+node_js:
+  - 'stable'
+  - '8'
+  - '6'
 env:
-  global:
-    - COMMIT=${TRAVIS_COMMIT::8}
-    - REPO=legco-web
-    - ORG=g0vhk
-
-services:
-  - docker
-
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 script:
-    - npm install
-    - npm install --only=dev
-    - npm run build
-
-after_success:
-    - docker build -t $ORG/$REPO:$COMMIT .
-    - export TAG='latest'
-    - docker tag $ORG/$REPO:$COMMIT $ORG/$REPO:$TAG
-    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker push $ORG/$REPO
+  - yarn lint
+  - yarn test

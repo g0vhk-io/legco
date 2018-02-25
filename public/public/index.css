@@ -1,0 +1,11 @@
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@import url(//fonts.googleapis.com/earlyaccess/cwtexhei.css);
+@import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css);
+@import url(//fonts.googleapis.com/earlyaccess/cwtexming.css);
+@import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+/* stylelint-disable font-family-no-missing-generic-family-keyword  */
+body {
+  font-family: 'cwtexhei', 'Arial';
+  margin: 0;
+}
