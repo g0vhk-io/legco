@@ -43,6 +43,7 @@ class Html extends React.Component {
             rel="stylesheet"
           />
           <link href="/public/index.css" rel="stylesheet" />
+          <link href="/public/hansard.css" rel="stylesheet" />
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <title>{title}</title>

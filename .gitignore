@@ -5,6 +5,7 @@ node_modules/
 
 # Compiled output
 build
+dist
 
 # Runtime data
 database.sqlite
@@ -27,3 +28,7 @@ yarn-error.log*
 
 # Misc
 .DS_Store
+
+# vim
+*.swo
+*.swp

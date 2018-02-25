@@ -27,6 +27,10 @@ const routes = {
       load: () => import(/* webpackMode: 'eager' */ './legco'),
     },
     {
+      path: '/legco/meeting/:id',
+      load: () => import(/* webpackMode: 'eager' */ './legco/Hansard.js'),
+    },
+    {
       path: '/legco/meeting',
       load: () => import(/* webpackMode: 'eager' */ './legco/Meeting.js'),
     },
